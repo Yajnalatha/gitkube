@@ -11,14 +11,11 @@ spec:
   #     secretKeyRef:
   #       name: regsecret
   #       key: .dockercfg
-  manifests:
-    helm: {}
-    path: mono-repo/manifests
   deployments:
-  - name: www
+  - name: nginx 
     containers: 
-    - name: www
-      path: mono-repo/microservices/nginx
-      dockerfile: mono-repo/microservices/nginx/Dockerfile
+    - name: nginx
+      path: .
+      dockerfile: Dockerfile
   authorizedKeys:
   - "ssh-rsa <key>"
